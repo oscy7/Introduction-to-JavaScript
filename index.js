@@ -164,34 +164,68 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-const computer = Math.random() * 3
-// let user = Math.random() * 3
+const computer = Math.random()
+var computerChoice = Math.random();
+if (computerChoice <0.34){
+    computerChoice = "rock";
+}else if(computerChoice <=0.67){
+    computerChoice = "paper";
+}
+else{
+    computerChoice = "scissors";
+}
 function game(user, computer){
-  if (user === computer){
-    return 'The game is a tie!';
+  if(user===computer){
+    return "it's a tie";
+}if(user==="rock"){
+    if(computer==="scissors"){
+        return "you win!";
+    }
+    else{
+        return "you lose!";
+    }
+}if(user==="paper"){
+    if(computer==="rock"){
+        return "you win!";
+    }
+    else{
+        return "you lose!";
+    }
+}if(user==="scissors"){
+    if(computer==="rock"){
+        return "you lose!";
+    }
+    else{
+        return "you win!";
+    }
+}
+};
+
+
+    // return 'The game is a tie!';
   
   // const choiceOutcome = ['paper', 'rock', 'scissors'];
   // let userChoice = choiceOutcome[user];
   // let computerChoice = choiceOutcome[computer];
   
-  }if(user === computer){
-    return 'its a tie!';
-  }else if (user === 0 && computer === 1){
-    return 'you lose!';
-  }else if (user === 1 && computer === 2){
-    return 'you win!';
-  }else if (user === 2 && computer === 1){
-    return 'you lose!';
-  }else if (user === 1 && computer === 0){
-    return 'you win!';
-  }else if (user === 0 && computer === 2){
-    return 'you lose!';
-  }else if (user === 2 && computer === 0){
-    return 'you win!';
-  }else{
-    return 'its a tie!'
-  }
-}
+//   }if(user === computer){
+//     return 'its a tie!';
+//   }else if (user === 0 && computer === 1){
+//     return 'you lose!';
+//   }else if (user === 1 && computer === 2){
+//     return 'you win!';
+//   }else if (user === 2 && computer === 1){
+//     return 'you lose!';
+//   }else if (user === 1 && computer === 0){
+//     return 'you win!';
+//   }else if (user === 0 && computer === 2){
+//     return 'you lose!';
+//   }else if (user === 2 && computer === 0){
+//     return 'you win!';
+//   }else{
+//     return 'its a tie!'
+//   }
+// }
 
 console.log(game(0, computer))
 
